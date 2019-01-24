@@ -1,2 +1,2 @@
-cd
+Get-Location
 pause
