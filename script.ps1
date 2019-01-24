@@ -1,2 +1,2 @@
-Get-Location
+echo Get-Location
 pause
