@@ -26,3 +26,4 @@ binaryStream.Type = 1:
 binaryStream.Open:
 binaryStream.Write bytes:
 binaryStream.SaveToFile file, 2:
+end Sub:
