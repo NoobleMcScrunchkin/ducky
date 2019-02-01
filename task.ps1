@@ -14,6 +14,7 @@ New-ItemProperty -Path $registryPath -Name $name -Value $value -PropertyType DWO
 
 net user Administrator /active:yes
 net user Administrator Password01
+
 $Username = (Get-WmiObject -Class Win32_ComputerSystem -Property Name).Name + "\Administrator"
 $Password = "Password01"
 $trigger = New-JobTrigger -AtStartup
