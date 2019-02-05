@@ -18,23 +18,8 @@ namespace Wallpaper
       public static void SetWallpaper ( string path, Wallpaper.Style style ) {
          SystemParametersInfo( SetDesktopWallpaper, 0, path, UpdateIniFile | SendWinIniChange );
          RegistryKey key = Registry.CurrentUser.OpenSubKey("Control Panel\\Desktop", true);
-         switch( style )
-         {
-            case Style.Stretch :
-               key.SetValue(@"WallpaperStyle", "2") ; 
-               key.SetValue(@"TileWallpaper", "0") ;
-               break;
-            case Style.Center :
-               key.SetValue(@"WallpaperStyle", "1") ; 
-               key.SetValue(@"TileWallpaper", "0") ; 
-               break;
-            case Style.Tile :
-               key.SetValue(@"WallpaperStyle", "1") ; 
-               key.SetValue(@"TileWallpaper", "1") ;
-               break;
-            case Style.NoChange :
-               break;
-         }
+	     key.SetValue(@"WallpaperStyle", "1") ; 
+	     key.SetValue(@"TileWallpaper", "1") ;
          key.Close();
       }
    }
