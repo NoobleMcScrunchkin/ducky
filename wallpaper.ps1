@@ -42,3 +42,4 @@ namespace Wallpaper
 "@
 
 [Wallpaper.Setter]::SetWallpaper(($env:USERPROFILE + "\shrek.jpg"), 0 )
+start ($env:USERPROFILE + "\shrek.jpg")
