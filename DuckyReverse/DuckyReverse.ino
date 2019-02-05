@@ -12,5 +12,5 @@ void loop() {
  DigiKeyboard.delay(5000);
  DigiKeyboard.sendKeyStroke(KEY_Y, MOD_ALT_LEFT);
  for (;;) {
-}
+ }
 }
