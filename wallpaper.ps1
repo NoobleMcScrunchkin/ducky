@@ -19,7 +19,7 @@ namespace Wallpaper
          SystemParametersInfo( SetDesktopWallpaper, 0, path, UpdateIniFile | SendWinIniChange );
          RegistryKey key = Registry.CurrentUser.OpenSubKey("Control Panel\\Desktop", true);
 	     key.SetValue(@"WallpaperStyle", "1") ; 
-	     key.SetValue(@"TileWallpaper", "1") ;
+	     key.SetValue(@"TileWallpaper", "0") ;
          key.Close();
       }
    }
